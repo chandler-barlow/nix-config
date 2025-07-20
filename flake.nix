@@ -21,7 +21,7 @@
           _module.args = { inherit inputs; };
           home-manager = {
             useGlobalPkgs = true;
-            useUserPkgs = true;
+            useUserPackages = true;
             extraSpecialArgs = { inherit inputs; };
             users.cbarlow = import ./home;
           };
@@ -44,7 +44,7 @@
         nixosConfigurations = {
           "cbarlow-vm" = nixpkgs.lib.nixosSystem {
             system = "aarch64-linux";
-            modules = [ import ./orb { pkgs = nixpkgs; } ] ++ defaultModules;
+            modules = [ ./orb ] ++ defaultModules;
           };
         };
       };

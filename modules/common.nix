@@ -9,12 +9,13 @@
     security.sudo.execWheelOnly = true;
     security.sudo.wheelNeedsPassword = true;
 
-    programs.command-not-found.enable = false;
+    programs = {
+      command-not-found.enable = false;
+      nix-ld.enable = true;
+      fish.enable = true;
+    };
 
-    programs.nix-ld.enable = true;
-
-    porgrams.fish.enable = true;
-    users.defaultShell = pkgs.fish;
+    users.defaultUserShell = pkgs.fish;
 
     nix = {
       nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
