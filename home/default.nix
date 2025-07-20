@@ -3,34 +3,35 @@
   imports = [];
 
   home = {
-    username = "cbarlow";
-    homeDirectory = "/home/cbarlow";
-    sessionPath = [ "$HOME/bin" ];
-    sessionVeriables = {
-      EDITOR = "hx";
-      XDG_CACHE_HOME = "$HOME/.cache";
-      XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_DATA_HOME = "$HOME/.local/share";
-      XDG_STATE_HOME = "$HOME/.local/state";
-    };  
+      username = "cbarlow";
+      homeDirectory = "/home/cbarlow";
+      sessionPath = [ "$HOME/bin" ];
+      sessionVeriables = {
+        EDITOR = "hx";
+        XDG_CACHE_HOME = "$HOME/.cache";
+        XDG_CONFIG_HOME = "$HOME/.config";
+        XDG_DATA_HOME = "$HOME/.local/share";
+        XDG_STATE_HOME = "$HOME/.local/state";
+      };  
 
-    shellAliases = {
-      rebuild-vm = "sudo nixos-rebuild switch --flake .#cbarlow-vm";
+      shellAliases = {
+        rebuild-vm = "sudo nixos-rebuild switch --flake .#cbarlow-vm";
+      };
+
+      stateVersion = "21.05";
+
+      packages = with pkgs; [
+        fd
+        sd
+        jq
+        nil
+        nixpkgs-fmt
+        nix-output-monitor
+        fzf
+        btop
+        cabal2nix      
+      ];
     };
-
-    stateVersion = "21.05";
-
-    packages = with pkgs [
-      fd
-      sd
-      jq
-      nil
-      nixpkgs-fmt
-      nix-output-monitor
-      fzf
-      btop
-      cabal2nix      
-    ];
 
     programs = {
       home-manager.enable = true;
@@ -72,7 +73,7 @@
             haskell-language-server.command = "haskell-language-server";
             haskell-language-server.config.haskell = {
               formattingProvider = "ormolu";
-              plugin.fourmolu.config.external = ture;
+              plugin.fourmolu.config.external = true;
             };
             nil.command = "nixd";
           };
@@ -93,6 +94,5 @@
 
         settings.theme = "material_darker";
       };
-    };
   };
 }
