@@ -6,8 +6,24 @@
       helix
     ];
 
+    users.users.cbarlow = {
+      uid = 501;
+      extraGroups = [ "wheel" "orbstack" ];
+
+      # simulate isNormalUser, but with an arbitrary UID
+      isSystemUser = true;
+      group = "users";
+      createHome = true;
+      home = "/home/cbarlow";
+      homeMode = "700";
+      useDefaultShell = true;
+    };
+
+    # This being `true` leads to a few nasty bugs, change at your own risk!
+    users.mutableUsers = false;
+
     security.sudo.execWheelOnly = true;
-    security.sudo.wheelNeedsPassword = true;
+    security.sudo.wheelNeedsPassword = false;
 
     programs = {
       command-not-found.enable = false;
