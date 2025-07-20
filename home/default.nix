@@ -80,8 +80,8 @@
         };
         settings.editor = {
           true-color = true;
-          color-mode = true;
-          cusorline = true;
+          color-modes = true;
+          cursorline = true;
         };
         settings.editor.indent-guides = {
           render = true;

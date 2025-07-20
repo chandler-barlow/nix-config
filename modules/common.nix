@@ -44,7 +44,7 @@
           "fetch-closure"
           "flakes"
           "nix-command"
-          "repl-flakes"
+          # "repl-flakes"
         ];
         trusted-users = [ "@wheel" ];
         auto-optimise-store = false;
