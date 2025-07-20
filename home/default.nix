@@ -4,9 +4,9 @@
 
   home = {
       username = "cbarlow";
-      homeDirectory = "/home/cbarlow";
+      homeDirectory = pkgs.lib.mkForce "/home/cbarlow";
       sessionPath = [ "$HOME/bin" ];
-      sessionVeriables = {
+      sessionVariables = {
         EDITOR = "hx";
         XDG_CACHE_HOME = "$HOME/.cache";
         XDG_CONFIG_HOME = "$HOME/.config";
@@ -43,7 +43,7 @@
       git = {
         enable = true;
         userName = "chandler-barlow";
-        email = "chandlerbrlw@gmail.com";
+        userEmail = "chandlerbrlw@gmail.com";
         extraConfig = {
           user.signingKey = "~/.ssh/id_ed25519";
           gpg.format = "ssh";

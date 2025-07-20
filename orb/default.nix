@@ -15,7 +15,7 @@
       ./orbstack.nix
     ];
 
-  users.users.chandlerbarlow = {
+  users.users.cbarlow = {
     uid = 501;
     extraGroups = [ "wheel" "orbstack" ];
 
@@ -23,7 +23,7 @@
     isSystemUser = true;
     group = "users";
     createHome = true;
-    home = "/home/chandlerbarlow";
+    home = "/home/cbarlow";
     homeMode = "700";
     useDefaultShell = true;
   };
