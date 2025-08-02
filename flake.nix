@@ -46,6 +46,10 @@
             system = "aarch64-linux";
             modules = [ ./orb ] ++ defaultModules;
           };
+          "home-server" = nixpkgs.lib.nixosSystem {
+            system = "aarch64-linux";
+            modules = [ ./server ] ++ defaultModules;
+          };
         };
       };
 }
