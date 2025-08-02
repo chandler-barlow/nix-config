@@ -16,6 +16,7 @@
 
       shellAliases = {
         rebuild-vm = "sudo nixos-rebuild switch --flake .#cbarlow-vm";
+        rebuild-server = "sudo nixos-rebuild switch --flake .#home-server";
       };
 
       stateVersion = "21.05";
@@ -38,7 +39,10 @@
 
       fish.enable = true;
 
-      zellij.enable = true;
+      zellij = {
+        enable = true;
+        settings.theme = "solarized-dark";
+      };
 
       git = {
         enable = true;
@@ -92,7 +96,7 @@
           display-inlay-hints = true;
         };
 
-        settings.theme = "material_darker";
+        settings.theme = "solarized_dark";
       };
   };
 }
