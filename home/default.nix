@@ -26,6 +26,8 @@
         sd
         jq
         nil
+        go
+        gopls
         nixpkgs-fmt
         nix-output-monitor
         fzf
