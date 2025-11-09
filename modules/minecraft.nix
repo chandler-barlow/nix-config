@@ -13,7 +13,7 @@
     serverProperties = {
       server-port = 43000;
       difficulty = 3;
-      gamemode = 1;
+      gamemode = 2;
       max-players = 5;
       motd = "Tank's Minecraft Server";
       # white-list = true;

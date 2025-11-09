@@ -48,7 +48,7 @@
           };
           "home-server" = nixpkgs.lib.nixosSystem {
             system = "aarch64-linux";
-            modules = [ ./server ./modules/mincraft.nix ] ++ defaultModules;
+            modules = [ ./server ./modules/minecraft.nix ] ++ defaultModules;
           };
         };
       };

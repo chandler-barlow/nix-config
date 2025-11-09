@@ -82,6 +82,17 @@
               plugin.fourmolu.config.external = true;
             };
             nil.command = "nixd";
+            gopls.config.go = {
+              hints = {
+                assignVariableTypes = false;
+                compositeLiteralFields = false;
+                compositeLiteralTypes = false;
+                constantValues = false;
+                functionTypeParameters = false;
+                parameterNames = false;
+                rangeVariableTypes = false;
+              };
+            };
           };
         };
         settings.editor = {
